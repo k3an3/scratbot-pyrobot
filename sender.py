@@ -13,5 +13,5 @@ class Sender:
 
 class DebugSender(Sender):
     def sendCommand(self, command):
-        print("DEBUG: -->  %s" % command.toCommandString)
+        print("DEBUG: -->  %s" % command.toCommandString())
         Sender.sendCommand(self, command)
