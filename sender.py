@@ -8,8 +8,8 @@ class Sender:
     def getCommandById(self, command_id):
         return self.sent_commands[command_id]
     
-    def sendCommand(self):
-        sent_commands[command.command_id] = command
+    def sendCommand(self, command):
+        self.sent_commands[command.command_id] = command
 
 class DebugSender(Sender):
     def sendCommand(self, command):

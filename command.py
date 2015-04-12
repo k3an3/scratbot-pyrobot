@@ -5,41 +5,41 @@ class Command:
         self.command_id = Command.last_command_id + 1
         Command.last_command_id += 1
 
-    def toCommandString():
+    def toCommandString(self):
         return ""
 
 class MoveForwardCommand(Command):
 
     def __init__(self, distance=200):
         self.distance = distance
-        super(Subclass, self).__init__()
+        Command.__init__(self)
 
-    def toCommandString():
-        return '!mvfwd,' + self.command_id + ',' + str(self.distance) + '$'
+    def toCommandString(self):
+        return '!mvfwd,' + str(self.command_id) + ',' + str(self.distance) + '$'
 
 class MoveReverseCommand(Command):
 
     def __init__(self, distance=200):
         self.distance = distance
-        super(Subclass, self).__init__()
+        Command.__init__(self)
 
-    def toCommandString():
-        return '!mvrev,' + self.command_id + ',' + str(self.distance) + '$'
+    def toCommandString(self):
+        return '!mvrev,' + str(self.command_id) + ',' + str(self.distance) + '$'
 
 class RotateClockwiseCommand(Command):
 
     def __init__(self, degrees=90):
         self.degrees = degrees
-        super(Subclass, self).__init__()
+        Command.__init__(self)
 
-    def toCommandString():
-        return '!rtclk,' + self.command_id + ',' + str(self.degrees) + '$'
+    def toCommandString(self):
+        return '!rtclk,' + str(self.command_id) + ',' + str(self.degrees) + '$'
 
 class RotateCounterclockwiseCommand(Command):
 
     def __init__(self, degrees=90):
         self.degrees = degrees
-        super(Subclass, self).__init__()
+        Command.__init__(self)
 
-    def toCommandString():
-        return '!rtctc,' + self.command_id + ',' + str(self.degrees) + '$'
+    def toCommandString(self):
+        return '!rtctc,' + str(self.command_id) + ',' + str(self.degrees) + '$'
