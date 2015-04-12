@@ -1,13 +1,9 @@
-from sender import get_sent_commands
-
-global last_id
-
 class Command:
-    id = 0
+    last_id = 0
 
     def __init__(self):
-        self.id = last_id + 1
-        last_id += 1
+        self.id = Command.last_id + 1
+        Command.last_id += 1
 
     def toCommandString():
         return ""
