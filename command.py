@@ -9,36 +9,36 @@ class Command:
         return ""
 
 class MoveForwardCommand(Command):
-    distance = 200
 
-    def __init__():
+    def __init__(self, distance=200):
+        self.distance = distance
         super(Subclass, self).__init__()
 
     def toCommandString():
         return '!mvfwd,' + self.command_id + ',' + str(self.distance) + '$'
 
 class MoveReverseCommand(Command):
-    distance = 200
 
-    def __init__():
+    def __init__(self, distance=200):
+        self.distance = distance
         super(Subclass, self).__init__()
 
     def toCommandString():
         return '!mvrev,' + self.command_id + ',' + str(self.distance) + '$'
 
 class RotateClockwiseCommand(Command):
-    degrees = 90
 
-    def __init__():
+    def __init__(self, degrees=90):
+        self.degrees = degrees
         super(Subclass, self).__init__()
 
     def toCommandString():
         return '!rtclk,' + self.command_id + ',' + str(self.degrees) + '$'
 
 class RotateCounterclockwiseCommand(Command):
-    degrees = 90
 
-    def __init__():
+    def __init__(self, degrees=90):
+        self.degrees = degrees
         super(Subclass, self).__init__()
 
     def toCommandString():
