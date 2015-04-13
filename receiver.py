@@ -35,15 +35,9 @@ class DebugReceiver(Receiver):
         Receiver.receive(self, string)
             
 class PySerialReceiver(Receiver):
-    def __init__(self, sender, comport, 
-            baud=56700, timeout=None):
-        
+    def __init__(self, sender, ser)
         Receiver.__init__(self, sender)
-        self.ser = serial(
-                port=comport, 
-                baudrate=baud, 
-                timeout=timeout,
-                writeTimeout=timeout)
+        self.ser = ser
         self.serbuffer = ""
         
     def receive(self):

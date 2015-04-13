@@ -1,3 +1,5 @@
+import serial
+
 class Sender:
     def __init__(self):
         self.sent_commands = {}
@@ -18,9 +20,18 @@ class DebugSender(Sender):
         
 class FifoSender(Sender):
     def __init__(self, fifo):
-        self.fifo = file(fifo, "w")
         Sender.__init__(self)
+        self.fifo = file(fifo, "w")
         
     def sendCommand(self, command):
         fifo.write("DEBUG: -->  %s" % command.toCommandString())
+        Sender.sendCommand(self, command)
+    
+class PySerialSender(Receiver):
+    def __init__(self, ser):
+        Sender.__init__(self)
+        self.ser = ser
+        
+    def sendCommand(self, command):
+        ser.write(command)
         Sender.sendCommand(self, command)
