@@ -5,7 +5,7 @@ def parseStatus(string, mysender):
         return None
     parts = string.split(',')
     cmd_type = parts[0][1:]
-    command = mysender.getCommandById(parts[1])
+    command = mysender.getCommandById(int(parts[1]))
     if command:
         if cmd_type == 'mvfwd':
             if not len(parts) == 4:
