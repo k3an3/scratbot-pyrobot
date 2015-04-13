@@ -27,7 +27,7 @@ class FifoSender(Sender):
         fifo.write("DEBUG: -->  %s" % command.toCommandString())
         Sender.sendCommand(self, command)
     
-class PySerialSender(Receiver):
+class PySerialSender(Sender):
     def __init__(self, ser):
         Sender.__init__(self)
         self.ser = ser
