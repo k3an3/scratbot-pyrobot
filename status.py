@@ -10,51 +10,51 @@ def parseStatus(string, mysender):
         if cmd_type == 'mvfwd':
             if not len(parts) == 4:
                 return None
-            return MoveForwardStatus(int(parts[2]), int(parts[3]))
+            return MoveForwardStatus(command, int(parts[2]), int(parts[3]))
         elif cmd_type == 'mvrev':
             if not len(parts) == 4:
                 return None
-            return MoveReverseStatus(int(parts[2]), int(parts[3]))
+            return MoveReverseStatus(command, int(parts[2]), int(parts[3]))
         elif cmd_type == 'rtclk':
             if not len(parts) == 4:
                 return None
-            return MoveClockwiseStatus(int(parts[2]), int(parts[3]))
+            return MoveClockwiseStatus(command, int(parts[2]), int(parts[3]))
         elif cmd_type == 'rtctc':
             if not len(parts) == 4:
                 return None
-            return MoveCounterclockwiseStatus(int(parts[2]), int(parts[3]))
+            return MoveCounterclockwiseStatus(command, int(parts[2]), int(parts[3]))
     return None
 
 
 class Status:
 
-    def __init__(self, command_id):
-        self.command = getCommandById(command_id)
+    def __init__(self, command):
+        self.command = command
 
 class MoveForwardStatus(Status):
 
-    def __init__(self, distance, abort_reason):
+    def __init__(self, command, distance, abort_reason):
         self.distance_actually_moved = distance
         self.abort_reason = abort_reason
-        Status.__init__(self)
+        Status.__init__(self, command)
 
 class MoveReverseStatus(Status):
 
-    def __init__(self, distance, abort_reason):
+    def __init__(self, command, distance, abort_reason):
         self.distance_actually_moved = distance
         self.abort_reason = abort_reason
-        Status.__init__(self)
+        Status.__init__(self, command)
 
 class RotateClockwiseStatus(Status):
 
-    def __init__(self, degrees, abort_reason):
+    def __init__(self, command, degrees, abort_reason):
         self.degrees_actually_turned = degrees
         self.abort_reason = abort_reason
-        Status.__init__(self)
+        Status.__init__(self, command)
 
 class RotateCounterclockwiseStatus(Status):
 
-    def __init__(self, degrees, abort_reason):
+    def __init__(self, command, degrees, abort_reason):
         self.degrees_actually_turned = degrees
         self.abort_reason = abort_reason
-        Status.__init__(self)
+        Status.__init__(self, command)
