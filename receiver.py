@@ -1,5 +1,5 @@
-from status import Status
 import serial
+import status
 
 class Receiver:
     def __init__(self, mysender):
@@ -10,15 +10,15 @@ class Receiver:
         return received_statuses.pop()
     
     def pushStatus(self, status):
-        self.received_statuses.push(status)
+        self.received_statuses.append(status)
         
     def isNewStatusAvailable(self):
-        if len(received_statuses) > 0:
+        if len(self.received_statuses) > 0:
             return True
         else:
             return False
     def receive(self, string):   
-        stat = Status.parseStatus(string, self.sender)
+        stat = status.parseStatus(string, self.sender)
         if stat != None:
             self.pushStatus(stat)
         else:
@@ -26,7 +26,7 @@ class Receiver:
 
 class DebugReceiver(Receiver):
     def __init__(self, mysender):
-        Receiver.__init__(self, sender)
+        Receiver.__init__(self, mysender)
     
     def debugReceive(self, string):
         Receiver.receive(self, string)
@@ -60,4 +60,4 @@ class PySerialReceiver(Receiver):
                 
 class FifoReceiver(Receiver):
     def __init__(self, sender, fifo):
-        
+        pass
