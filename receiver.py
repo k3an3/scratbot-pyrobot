@@ -7,7 +7,7 @@ class Receiver:
         self.sender = mysender
         
     def getStatus(self):
-        return received_statuses.pop()
+        return self.received_statuses.pop()
     
     def pushStatus(self, status):
         self.received_statuses.append(status)
