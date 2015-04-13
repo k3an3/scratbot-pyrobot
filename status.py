@@ -1,34 +1,35 @@
 import sender
 
-def parseStatus(string, mysender=sender.getDefaultSender()):
+def parseStatus(string, mysender):
     if string[0] != '!':
         return None
     parts = string.split(',')
     cmd_type = parts[0][1:]
-    command = mysender.getCommandByID(parts[1])
+    command = mysender.getCommandById(parts[1])
     if command:
         if cmd_type == 'mvfwd':
             if not len(parts) == 4:
                 return None
-            return MoveForwardStatus(int(parts[2]), parts[3])
+            return MoveForwardStatus(int(parts[2]), int(parts[3]))
         elif cmd_type == 'mvrev':
             if not len(parts) == 4:
                 return None
-            return MoveReverseStatus(int(parts[2]), parts[3])
+            return MoveReverseStatus(int(parts[2]), int(parts[3]))
         elif cmd_type == 'rtclk':
             if not len(parts) == 4:
                 return None
-            return MoveClockwiseStatus(int(parts[2]), parts[3])
+            return MoveClockwiseStatus(int(parts[2]), int(parts[3]))
         elif cmd_type == 'rtctc':
             if not len(parts) == 4:
                 return None
-            return MoveCounterclockwiseStatus(int(parts[2]), parts[3])
+            return MoveCounterclockwiseStatus(int(parts[2]), int(parts[3]))
+    return None
 
 
 class Status:
 
     def __init__(self, command_id):
-        self.command = getCommandByID(id)
+        self.command = getCommandById(command_id)
 
 class MoveForwardStatus(Status):
 
