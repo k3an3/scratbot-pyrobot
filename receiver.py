@@ -31,7 +31,7 @@ class DebugReceiver(Receiver):
     def __init__(self, mysender):
         Receiver.__init__(self, mysender)
     
-    def debugReceive(self, string):
+    def receive(self, string):
         Receiver.receive(self, string)
             
 class PySerialReceiver(Receiver):
@@ -46,7 +46,7 @@ class PySerialReceiver(Receiver):
                 writeTimeout=timeout)
         self.serbuffer = ""
         
-    def serialReceive(self):
+    def receive(self):
         keep_reading = True
         while keep_reading:
             r = self.ser.read(1)
@@ -77,7 +77,7 @@ class FifoReceiver(Receiver):
             
         self.fifobuffer = ""
     
-    def fifoReceive(self):
+    def receive(self):
         while True:
             try:
                 r = os.read(self.fifo, 1)
@@ -89,7 +89,7 @@ class FifoReceiver(Receiver):
                 else:
                     raise
                 
-            if r is None:
+            if r is None or r == '':
                 break  
             
             if r == "!":

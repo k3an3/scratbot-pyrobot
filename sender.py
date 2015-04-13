@@ -15,3 +15,12 @@ class DebugSender(Sender):
     def sendCommand(self, command):
         print("DEBUG: -->  %s" % command.toCommandString())
         Sender.sendCommand(self, command)
+        
+class FifoSender(Sender):
+    def __init__(self, fifo):
+        self.fifo = file(fifo, "w")
+        Sender.__init__(self)
+        
+    def sendCommand(self, command):
+        fifo.write("DEBUG: -->  %s" % command.toCommandString())
+        Sender.sendCommand(self, command)
