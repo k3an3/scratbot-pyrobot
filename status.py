@@ -14,13 +14,15 @@ def parseStatus(string, mysender=sender.getDefaultSender()):
         elif cmd_type == 'mvrev':
             if not len(parts) == 4:
                 return None
-            return MoveForwardStatus(int(parts[2]), parts[3])
+            return MoveReverseStatus(int(parts[2]), parts[3])
         elif cmd_type == 'rtclk':
             if not len(parts) == 4:
                 return None
+            return MoveClockwiseStatus(int(parts[2]), parts[3])
         elif cmd_type == 'rtctc':
             if not len(parts) == 4:
                 return None
+            return MoveCounterclockwiseStatus(int(parts[2]), parts[3])
 
 
 class Status:
@@ -34,7 +36,7 @@ class MoveForwardStatus(Status):
         self.distance_actually_moved = distance
         self.abort_reason = abort_reason
 
-class MoveForwardStatus(Status):
+class MoveReverseStatus(Status):
 
     def __init__(self, distance, abort_reason):
         self.distance_actually_moved = distance
