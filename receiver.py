@@ -1,5 +1,7 @@
 import serial
 import status
+import os
+import errno
 
 class Receiver:
     def __init__(self, mysender):
@@ -17,6 +19,7 @@ class Receiver:
             return True
         else:
             return False
+        
     def receive(self, string):   
         stat = status.parseStatus(string, self.sender)
         if stat != None:
@@ -60,4 +63,39 @@ class PySerialReceiver(Receiver):
                 
 class FifoReceiver(Receiver):
     def __init__(self, sender, fifo):
-        pass
+        Receiver.__init__(self, sender)
+        
+        try:
+            os.mkfifo(fifo, 0777)
+        except OSError as err:
+            if err.errno == errno.EEXIST:
+                pass
+            else:
+                raise
+            
+        self.fifo = os.open(fifo, os.O_RDONLY|os.O_NONBLOCK)
+            
+        self.fifobuffer = ""
+    
+    def fifoReceive(self):
+        while True:
+            try:
+                r = os.read(self.fifo, 1)
+            except OSError as err:
+                if err.errno == errno.EAGAIN or\
+                        err.errno == EWOULDBLOCK:
+                        
+                    r = None
+                else:
+                    raise
+                
+            if r is None:
+                break  
+            
+            if r == "!":
+                self.fifobuffer = "!"
+            elif r == "$":
+                self.fifobuffer += "$"
+                Receiver.receive(self, self.fifobuffer)
+            else:
+                self.fifobuffer += r
