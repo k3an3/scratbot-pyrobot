@@ -3,6 +3,8 @@ import sender
 def parseStatus(string, mysender):
     if string[0] != '!':
         return None
+    if string.endswith('$'):
+        string = string[-1:]
     parts = string.split(',')
     cmd_type = parts[0][1:]
     command = mysender.getCommandById(int(parts[1]))
