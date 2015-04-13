@@ -15,14 +15,3 @@ class DebugSender(Sender):
     def sendCommand(self, command):
         print("DEBUG: -->  %s" % command.toCommandString())
         Sender.sendCommand(self, command)
-        
-global default_sender
-default_sender = None
-        
-def getDefaultSender():
-    global default_sender
-    return default_sender
-
-def setDefaultSender(s):
-    global default_sender 
-    default_sender = s
