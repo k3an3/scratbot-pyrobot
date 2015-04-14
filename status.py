@@ -20,11 +20,11 @@ def parseStatus(string, mysender):
         elif cmd_type == 'rtclk':
             if not len(parts) == 4:
                 return None
-            return MoveClockwiseStatus(command, int(parts[2]), int(parts[3]))
+            return RotateClockwiseStatus(command, int(parts[2]), int(parts[3]))
         elif cmd_type == 'rtctc':
             if not len(parts) == 4:
                 return None
-            return MoveCounterclockwiseStatus(command, int(parts[2]), int(parts[3]))
+            return RotateCounterclockwiseStatus(command, int(parts[2]), int(parts[3]))
     return None
 
 
