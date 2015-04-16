@@ -48,6 +48,7 @@ class MoveForwardStatus(Status):
         strings[0] = "Movement fully completed"
         strings[1] = "Left bumper collision"
         strings[2] = "Right bumper collision"
+        strings[100] = "Other"
         return strings[self.abort_reason]
 
 class MoveReverseStatus(Status):
@@ -60,6 +61,7 @@ class MoveReverseStatus(Status):
     def abortReasonString(self):
         strings = {}
         strings[0] = "Movement fully completed"
+        strings[100] = "Other"
         return strings[self.abort_reason]
 
 class RotateClockwiseStatus(Status):
@@ -72,6 +74,7 @@ class RotateClockwiseStatus(Status):
     def abortReasonString(self):
         strings = {}
         strings[0] = "Rotation fully completed"
+        strings[100] = "Other"
         return strings[self.abort_reason]
 
 class RotateCounterclockwiseStatus(Status):
@@ -84,4 +87,5 @@ class RotateCounterclockwiseStatus(Status):
     def abortReasonString(self):
         strings = {}
         strings[0] = "Rotation fully completed"
+        strings[100] = "Other"
         return strings[self.abort_reason]
