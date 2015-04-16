@@ -32,8 +32,8 @@ class Status:
 
     def __init__(self, command):
         self.command = command
-        
-    def abortReasonString():
+
+    def abortReasonString(self):
         return "Base Class. Not implemented."
 
 class MoveForwardStatus(Status):
@@ -42,8 +42,8 @@ class MoveForwardStatus(Status):
         self.distance_actually_moved = distance
         self.abort_reason = abort_reason
         Status.__init__(self, command)
-        
-    def abortReasonString():
+
+    def abortReasonString(self):
         strings = {}
         strings[0] = "Movement fully completed"
         strings[1] = "Left bumper collision"
@@ -56,8 +56,8 @@ class MoveReverseStatus(Status):
         self.distance_actually_moved = distance
         self.abort_reason = abort_reason
         Status.__init__(self, command)
-        
-    def abortReasonString():
+
+    def abortReasonString(self):
         strings = {}
         strings[0] = "Movement fully completed"
         return strings[self.abort_reason]
@@ -68,8 +68,8 @@ class RotateClockwiseStatus(Status):
         self.degrees_actually_turned = degrees
         self.abort_reason = abort_reason
         Status.__init__(self, command)
-        
-    def abortReasonString():
+
+    def abortReasonString(self):
         strings = {}
         strings[0] = "Rotation fully completed"
         return strings[self.abort_reason]
@@ -80,8 +80,8 @@ class RotateCounterclockwiseStatus(Status):
         self.degrees_actually_turned = degrees
         self.abort_reason = abort_reason
         Status.__init__(self, command)
-        
-    def abortReasonString():
+
+    def abortReasonString(self):
         strings = {}
         strings[0] = "Rotation fully completed"
         return strings[self.abort_reason]
