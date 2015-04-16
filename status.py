@@ -29,7 +29,7 @@ def parseStatus(string, mysender):
             if not len(parts) == 6:
                 return None
             return ScanDataStatus(command, int(parts[2]),
-                    int(parts[3]),int(parts[4])
+                    int(parts[3]),int(parts[4]))
     return None
 
 
