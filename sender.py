@@ -33,5 +33,6 @@ class PySerialSender(Sender):
         self.ser = ser
         
     def sendCommand(self, command):
-        ser.write(command)
+        print command
+        self.ser.write(command.toCommandString())
         Sender.sendCommand(self, command)
