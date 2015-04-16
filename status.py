@@ -41,6 +41,9 @@ class Status:
     def abortReasonString(self):
         return "Base Class. Not implemented."
 
+    def actualResultString(self):
+        return "Base Class. Not implemented."
+
 class MoveForwardStatus(Status):
 
     def __init__(self, command, distance, abort_reason):
@@ -55,6 +58,9 @@ class MoveForwardStatus(Status):
         strings[2] = "Right bumper collision"
         return strings[self.abort_reason]
 
+    def actualResultString(self):
+        return " - Actually moved {} mm".format(self.distance_actually_moved)
+
 class MoveReverseStatus(Status):
 
     def __init__(self, command, distance, abort_reason):
@@ -66,6 +72,9 @@ class MoveReverseStatus(Status):
         strings = {}
         strings[0] = "Movement fully completed"
         return strings[self.abort_reason]
+
+    def actualResultString(self):
+        return " - Actually moved {} mm".format(self.distance_actually_moved)
 
 class RotateClockwiseStatus(Status):
 
@@ -79,6 +88,9 @@ class RotateClockwiseStatus(Status):
         strings[0] = "Rotation fully completed"
         return strings[self.abort_reason]
 
+    def actualResultString(self):
+        return " - Actually turned {} degrees".format(self.degrees_actually_turned)
+
 class RotateCounterclockwiseStatus(Status):
 
     def __init__(self, command, degrees, abort_reason):
@@ -90,6 +102,9 @@ class RotateCounterclockwiseStatus(Status):
         strings = {}
         strings[0] = "Rotation fully completed"
         return strings[self.abort_reason]
+
+    def actualResultString(self):
+        return " - Actually turned {} degrees".format(self.degrees_actually_turned)
 
 #Format: "!scan,cmd_id,angle,distance(cm),size(cm)$"
 class ScanDataStatus(Status):
