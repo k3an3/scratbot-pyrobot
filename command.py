@@ -43,3 +43,11 @@ class RotateCounterclockwiseCommand(Command):
 
     def toCommandString(self):
         return '!rtctc,' + str(self.command_id) + ',' + str(self.degrees) + '$'
+        
+class BeginScanCommand(Command):
+
+    def __init(self):
+        Command.__init__(self)
+        
+    def toCommandString(self):
+        return '!scan,' + str(self.command_id) + '$'
