@@ -25,6 +25,11 @@ def parseStatus(string, mysender):
             if not len(parts) == 4:
                 return None
             return RotateCounterclockwiseStatus(command, int(parts[2]), int(parts[3]))
+        elif cmd_type = 'scan':
+            if not len(parts) == 6:
+                return None
+            return ScanDataStatus(command, int(parts[2]),
+                    int(parts[3]),int(parts[4])
     return None
 
 
@@ -85,3 +90,12 @@ class RotateCounterclockwiseStatus(Status):
         strings = {}
         strings[0] = "Rotation fully completed"
         return strings[self.abort_reason]
+    
+#Format: "!scan,cmd_id,angle,distance(cm),size(cm)$"
+class ScanDataStatus(Status):
+    
+    def __init__(self, command, angle, distance, size):
+        self.size = size
+        self.angle = angle
+        self.distance = distance
+        status.__init__(self, command)
