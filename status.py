@@ -52,7 +52,7 @@ class Status:
         self.strings[100] = "Weird abort reason"
 
     def abortReasonString(self):
-        return self.standard_abort_strings[self.abort_reason]
+        return self.strings[self.abort_reason]
 
 class MoveForwardStatus(Status):
 
