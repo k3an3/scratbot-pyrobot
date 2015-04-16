@@ -37,6 +37,8 @@ class Status:
 
     def __init__(self, command):
         self.command = command
+        self.isDataStatus = False
+        
         self.strings = {}
         self.strings[0] = "Movement fully completed"
         self.strings[1] = "Left bumper collision"
@@ -90,3 +92,4 @@ class ScanDataStatus(Status):
         self.angle = angle
         self.distance = distance
         status.__init__(self, command)
+        self.isDataStatus = True
