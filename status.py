@@ -37,9 +37,22 @@ class Status:
 
     def __init__(self, command):
         self.command = command
+        self.strings = {}
+        self.strings[0] = "Movement fully completed"
+        self.strings[1] = "Left bumper collision"
+        self.strings[2] = "Right bumper collision"
+        self.strings[3] = "Right wheeldrop detected"
+        self.strings[4] = "Left wheeldrop detected"
+        self.strings[5] = "Mystery wall detected"
+        self.strings[6] = "Left cliff detected"
+        self.strings[7] = "Right cliff detected"
+        self.strings[8] = "Front left cliff detected"
+        self.strings[9] = "Front right cliff detected"
+        self.strings[10] = "Virtual wall detected"
+        self.strings[100] = "Weird abort reason"
 
     def abortReasonString(self):
-        return "Base Class. Not implemented."
+        return self.standard_abort_strings[self.abort_reason]
 
 class MoveForwardStatus(Status):
 
@@ -48,24 +61,12 @@ class MoveForwardStatus(Status):
         self.abort_reason = abort_reason
         Status.__init__(self, command)
 
-    def abortReasonString(self):
-        strings = {}
-        strings[0] = "Movement fully completed"
-        strings[1] = "Left bumper collision"
-        strings[2] = "Right bumper collision"
-        return strings[self.abort_reason]
-
 class MoveReverseStatus(Status):
 
     def __init__(self, command, distance, abort_reason):
         self.distance_actually_moved = distance
         self.abort_reason = abort_reason
         Status.__init__(self, command)
-
-    def abortReasonString(self):
-        strings = {}
-        strings[0] = "Movement fully completed"
-        return strings[self.abort_reason]
 
 class RotateClockwiseStatus(Status):
 
@@ -74,22 +75,12 @@ class RotateClockwiseStatus(Status):
         self.abort_reason = abort_reason
         Status.__init__(self, command)
 
-    def abortReasonString(self):
-        strings = {}
-        strings[0] = "Rotation fully completed"
-        return strings[self.abort_reason]
-
 class RotateCounterclockwiseStatus(Status):
 
     def __init__(self, command, degrees, abort_reason):
         self.degrees_actually_turned = degrees
         self.abort_reason = abort_reason
         Status.__init__(self, command)
-
-    def abortReasonString(self):
-        strings = {}
-        strings[0] = "Rotation fully completed"
-        return strings[self.abort_reason]
 
 #Format: "!scan,cmd_id,angle,distance(cm),size(cm)$"
 class ScanDataStatus(Status):
