@@ -106,5 +106,5 @@ class ScanDataStatus(Status):
         self.size = size
         self.angle = angle
         self.distance = distance
-        status.__init__(self, command)
+        Status.__init__(self, command)
         self.isDataStatus = True
