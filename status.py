@@ -26,7 +26,7 @@ def parseStatus(string, mysender):
                 return None
             return RotateCounterclockwiseStatus(command, int(parts[2]), int(parts[3]))
         elif cmd_type == 'scan':
-            if not len(parts) == 6:
+            if not len(parts) == 5:
                 return None
             return ScanDataStatus(command, int(parts[2]),
                     int(parts[3]),int(parts[4]))
