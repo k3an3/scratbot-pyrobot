@@ -67,7 +67,7 @@ class MoveForwardStatus(Status):
         Status.__init__(self, command)
 
     def actualResultString(self):
-        return " - Actually moved {} mm".format(self.distance_actually_moved)
+        return "Actually moved {} mm".format(self.distance_actually_moved)
 
 class MoveReverseStatus(Status):
 
@@ -77,7 +77,7 @@ class MoveReverseStatus(Status):
         Status.__init__(self, command)
 
     def actualResultString(self):
-        return " - Actually moved {} mm".format(self.distance_actually_moved)
+        return "Actually moved {} mm".format(self.distance_actually_moved)
 
 class RotateClockwiseStatus(Status):
 
@@ -87,7 +87,7 @@ class RotateClockwiseStatus(Status):
         Status.__init__(self, command)
 
     def actualResultString(self):
-        return " - Actually turned {} degrees".format(self.degrees_actually_turned)
+        return "Actually turned {} degrees".format(self.degrees_actually_turned)
 
 class RotateCounterclockwiseStatus(Status):
 
@@ -97,7 +97,7 @@ class RotateCounterclockwiseStatus(Status):
         Status.__init__(self, command)
 
     def actualResultString(self):
-        return " - Actually turned {} degrees".format(self.degrees_actually_turned)
+        return "Actually turned {} degrees".format(self.degrees_actually_turned)
 
 #Format: "!scan,cmd_id,angle,distance(cm),size(cm)$"
 class ScanDataStatus(Status):
