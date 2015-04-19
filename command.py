@@ -43,11 +43,20 @@ class RotateCounterclockwiseCommand(Command):
 
     def toCommandString(self):
         return '!rtctc,' + str(self.command_id) + ',' + str(self.degrees) + '$'
-        
+
 class BeginScanCommand(Command):
 
-    def __init(self):
+    def __init__(self):
         Command.__init__(self)
-        
+
     def toCommandString(self):
         return '!scan,' + str(self.command_id) + '$'
+
+class PlayMusicCommand(Command):
+
+    def __init__(self, song_no=0):
+        self.song_no = song_no
+        Command.__init__(self)
+
+    def toCommandString(self):
+        return '!music,' + str(self.command_id) + str(self.song_no) + '$'
