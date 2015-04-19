@@ -7,21 +7,22 @@ class Receiver:
     def __init__(self, mysender):
         self.received_statuses = []
         self.sender = mysender
-        
+
     def getStatus(self):
         return self.received_statuses.pop()
-    
+
     def pushStatus(self, status):
         self.received_statuses.append(status)
-        
+
     def isNewStatusAvailable(self):
         if len(self.received_statuses) > 0:
             return True
         else:
             return False
-        
-    def receive(self, string):   
+
+    def receive(self, string):
         stat = status.parseStatus(string, self.sender)
+        print("DEBUG--> rx: " + string)
         if stat != None:
             self.pushStatus(stat)
         else:
@@ -30,16 +31,16 @@ class Receiver:
 class DebugReceiver(Receiver):
     def __init__(self, mysender):
         Receiver.__init__(self, mysender)
-    
+
     def receive(self, string):
         Receiver.receive(self, string)
-            
+
 class PySerialReceiver(Receiver):
     def __init__(self, sender, ser):
         Receiver.__init__(self, sender)
         self.ser = ser
         self.serbuffer = ""
-        
+
     def receive(self):
         while True:
             r = self.ser.read(1)
@@ -50,14 +51,14 @@ class PySerialReceiver(Receiver):
                 Receiver.receive(self, self.serbuffer)
             else:
                 self.serbuffer += r
-                
+
             if len(r) == 0:
                 break
-                
+
 class FifoReceiver(Receiver):
     def __init__(self, sender, fifo):
         Receiver.__init__(self, sender)
-        
+
         try:
             os.mkfifo(fifo, 0777)
         except OSError as err:
@@ -65,11 +66,11 @@ class FifoReceiver(Receiver):
                 pass
             else:
                 raise
-            
+
         self.fifo = os.open(fifo, os.O_RDONLY|os.O_NONBLOCK)
-            
+
         self.fifobuffer = ""
-    
+
     def receive(self):
         while True:
             try:
@@ -77,14 +78,14 @@ class FifoReceiver(Receiver):
             except OSError as err:
                 if err.errno == errno.EAGAIN or\
                         err.errno == EWOULDBLOCK:
-                        
+
                     r = None
                 else:
                     raise
-                
+
             if r is None or r == '':
-                break  
-            
+                break
+
             if r == "!":
                 self.fifobuffer = "!"
             elif r == "$":

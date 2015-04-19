@@ -52,6 +52,10 @@ class Status:
         self.strings[9] = "Front left cliff detected"
         self.strings[10] = "Front right cliff detected"
         self.strings[11] = "Virtual wall detected"
+        self.strings[12] = "Left white floor detected"
+        self.strings[13] = "Right white floor detected"
+        self.strings[14] = "Front left white floor detected"
+        self.strings[15] = "Front right white floor detected"
         self.strings[100] = "Weird abort reason"
 
     def abortReasonString(self):
