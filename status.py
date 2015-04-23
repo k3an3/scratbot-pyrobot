@@ -143,3 +143,12 @@ class ScanDataStatus(Status):
         self.distance = distance
         Status.__init__(self, command)
         self.isDataStatus = True
+
+class PollSensorStatus(Status):
+    """
+    Status class containing information about a single sensor.
+    """
+    def __init__(self, command, value):
+        Status.__init__(self, command)
+        self.value = value
+        self.isDataStatus = True

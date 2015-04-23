@@ -8,7 +8,6 @@ class Command:
     """
     Base class for all command objects.
     """
-
     last_command_id = 0
 
     def __init__(self):
@@ -28,7 +27,6 @@ class MoveForwardCommand(Command):
     """
     Command to move the robot forward by a given distance.
     """
-
     def __init__(self, distance=200):
         self.distance = distance
         Command.__init__(self)
@@ -40,7 +38,6 @@ class MoveReverseCommand(Command):
     """
     Command to move the robot backwards by a given distance.
     """
-
     def __init__(self, distance=200):
         self.distance = distance
         Command.__init__(self)
@@ -52,7 +49,6 @@ class RotateClockwiseCommand(Command):
     """
     Command to rotate the robot clockwise by a given number of degrees.
     """
-
     def __init__(self, degrees=90):
         self.degrees = degrees
         Command.__init__(self)
@@ -64,7 +60,6 @@ class RotateCounterclockwiseCommand(Command):
     """
     Command to rotate the robot counterclockwise by a given number of degrees.
     """
-
     def __init__(self, degrees=90):
         self.degrees = degrees
         Command.__init__(self)
@@ -74,14 +69,14 @@ class RotateCounterclockwiseCommand(Command):
 
 class BeginScanCommand(Command):
     """
-    Command to have the robot begin scanning for obstacles.
+    Command to have the robot begin scanning for obstacles with a given max distance.
     """
-
-    def __init__(self):
+    def __init__(self, max_distance=100):
+        self.max_distance = max_distance
         Command.__init__(self)
 
     def toCommandString(self):
-        return '!scan,' + str(self.command_id) + '$'
+        return '!scan,' + str(self.command_id) + ',' + str(self.max_distance) + '$'
 
 class PlayMusicCommand(Command):
     """
@@ -94,3 +89,13 @@ class PlayMusicCommand(Command):
 
     def toCommandString(self):
         return '!music,' + str(self.command_id) + str(self.song_no) + '$'
+
+class PollSensorCommand(Command):
+    """
+    Command to have the robot return current raw values of all light sensors.
+    """
+    def __init__(self):
+        Command.__init__(self)
+
+    def toCommandString(self):
+        return '!sense,' + str(self.command_id) + '$'
