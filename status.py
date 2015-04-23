@@ -39,7 +39,12 @@ def parseStatus(string, mysender):
             if not len(parts) == 5:
                 return None
             return ScanDataStatus(command, int(parts[2]),
-                    int(parts[3]),int(parts[4]))
+                    int(parts[3]), int(parts[4]))
+        elif cmd_type == 'sense':
+            if not len(parts) == 4:
+                return None
+            return PollSensorStatus(command, int(parts[2]),
+                    int(parts[3]))
     return None
 
 
@@ -148,7 +153,8 @@ class PollSensorStatus(Status):
     """
     Status class containing information about a single sensor.
     """
-    def __init__(self, command, value):
+    def __init__(self, command, sensor, value):
         Status.__init__(self, command)
+        self.sensor = sensor
         self.value = value
         self.isDataStatus = True
