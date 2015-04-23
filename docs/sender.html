@@ -1,0 +1,113 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module sender</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>sender</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/keane/dev/FinalProject-Web/PyRobot/sender.py">/home/keane/dev/FinalProject-Web/PyRobot/sender.py</a></font></td></tr></table>
+    <p><tt><a href="#Sender">Sender</a>&nbsp;Module<br>
+&nbsp;<br>
+Facilitates&nbsp;the&nbsp;sending&nbsp;of&nbsp;commands&nbsp;to&nbsp;the&nbsp;robot&nbsp;over&nbsp;serial.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="serial.html">serial</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="sender.html#Sender">Sender</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="sender.html#DebugSender">DebugSender</a>
+</font></dt><dt><font face="helvetica, arial"><a href="sender.html#FifoSender">FifoSender</a>
+</font></dt><dt><font face="helvetica, arial"><a href="sender.html#PySerialSender">PySerialSender</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DebugSender">class <strong>DebugSender</strong></a>(<a href="sender.html#Sender">Sender</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Sender">Sender</a>&nbsp;class&nbsp;for&nbsp;debugging&nbsp;purposes&nbsp;only.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="DebugSender-sendCommand"><strong>sendCommand</strong></a>(self, command)</dt></dl>
+
+<hr>
+Methods inherited from <a href="sender.html#Sender">Sender</a>:<br>
+<dl><dt><a name="DebugSender-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DebugSender-getCommandById"><strong>getCommandById</strong></a>(self, command_id)</dt><dd><tt>Fetch&nbsp;a&nbsp;stored&nbsp;command&nbsp;by&nbsp;its&nbsp;unique&nbsp;id.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="FifoSender">class <strong>FifoSender</strong></a>(<a href="sender.html#Sender">Sender</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>File-based&nbsp;sender&nbsp;class&nbsp;for&nbsp;debugging&nbsp;purposes&nbsp;only.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="FifoSender-__init__"><strong>__init__</strong></a>(self, fifo)</dt></dl>
+
+<dl><dt><a name="FifoSender-sendCommand"><strong>sendCommand</strong></a>(self, command)</dt></dl>
+
+<hr>
+Methods inherited from <a href="sender.html#Sender">Sender</a>:<br>
+<dl><dt><a name="FifoSender-getCommandById"><strong>getCommandById</strong></a>(self, command_id)</dt><dd><tt>Fetch&nbsp;a&nbsp;stored&nbsp;command&nbsp;by&nbsp;its&nbsp;unique&nbsp;id.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PySerialSender">class <strong>PySerialSender</strong></a>(<a href="sender.html#Sender">Sender</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Sender">Sender</a>&nbsp;class&nbsp;used&nbsp;in&nbsp;conjunction&nbsp;with&nbsp;pyserial&nbsp;to&nbsp;send&nbsp;commands&nbsp;to&nbsp;the&nbsp;robot.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="PySerialSender-__init__"><strong>__init__</strong></a>(self, ser)</dt></dl>
+
+<dl><dt><a name="PySerialSender-sendCommand"><strong>sendCommand</strong></a>(self, command)</dt><dd><tt>Send&nbsp;command&nbsp;over&nbsp;pyserial.</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="sender.html#Sender">Sender</a>:<br>
+<dl><dt><a name="PySerialSender-getCommandById"><strong>getCommandById</strong></a>(self, command_id)</dt><dd><tt>Fetch&nbsp;a&nbsp;stored&nbsp;command&nbsp;by&nbsp;its&nbsp;unique&nbsp;id.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Sender">class <strong>Sender</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Base&nbsp;class&nbsp;for&nbsp;all&nbsp;senders.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Sender-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Sender-getCommandById"><strong>getCommandById</strong></a>(self, command_id)</dt><dd><tt>Fetch&nbsp;a&nbsp;stored&nbsp;command&nbsp;by&nbsp;its&nbsp;unique&nbsp;id.</tt></dd></dl>
+
+<dl><dt><a name="Sender-sendCommand"><strong>sendCommand</strong></a>(self, command)</dt><dd><tt>Base&nbsp;method&nbsp;keeps&nbsp;track&nbsp;of&nbsp;sent&nbsp;commands&nbsp;so&nbsp;the&nbsp;corresponding&nbsp;status&nbsp;can&nbsp;be&nbsp;validated&nbsp;upon&nbsp;reciept.<br>
+Method&nbsp;can&nbsp;be&nbsp;overridden&nbsp;by&nbsp;subclasses&nbsp;in&nbsp;order&nbsp;to&nbsp;send&nbsp;commands&nbsp;over&nbsp;an&nbsp;actual&nbsp;medium.</tt></dd></dl>
+
+</td></tr></table></td></tr></table>
+</body></html>

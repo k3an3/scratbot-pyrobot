@@ -1,0 +1,181 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module status</title>
+<meta charset="utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>status</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/keane/dev/FinalProject-Web/PyRobot/status.py">/home/keane/dev/FinalProject-Web/PyRobot/status.py</a></font></td></tr></table>
+    <p><tt><a href="#Status">Status</a>&nbsp;Module<br>
+&nbsp;<br>
+Contains&nbsp;classes&nbsp;for&nbsp;status&nbsp;objects,&nbsp;which&nbsp;represent&nbsp;statuses&nbsp;returned&nbsp;by&nbsp;the&nbsp;robot.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="sender.html">sender</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="status.html#Status">Status</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="status.html#MoveForwardStatus">MoveForwardStatus</a>
+</font></dt><dt><font face="helvetica, arial"><a href="status.html#MoveReverseStatus">MoveReverseStatus</a>
+</font></dt><dt><font face="helvetica, arial"><a href="status.html#PollSensorStatus">PollSensorStatus</a>
+</font></dt><dt><font face="helvetica, arial"><a href="status.html#RotateClockwiseStatus">RotateClockwiseStatus</a>
+</font></dt><dt><font face="helvetica, arial"><a href="status.html#RotateCounterclockwiseStatus">RotateCounterclockwiseStatus</a>
+</font></dt><dt><font face="helvetica, arial"><a href="status.html#ScanDataStatus">ScanDataStatus</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MoveForwardStatus">class <strong>MoveForwardStatus</strong></a>(<a href="status.html#Status">Status</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Status">Status</a>&nbsp;class&nbsp;containing&nbsp;the&nbsp;results&nbsp;of&nbsp;a&nbsp;move&nbsp;forward&nbsp;command.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="MoveForwardStatus-__init__"><strong>__init__</strong></a>(self, command, distance, abort_reason)</dt></dl>
+
+<dl><dt><a name="MoveForwardStatus-actualResultString"><strong>actualResultString</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="status.html#Status">Status</a>:<br>
+<dl><dt><a name="MoveForwardStatus-abortReasonString"><strong>abortReasonString</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;string&nbsp;represented&nbsp;by&nbsp;the&nbsp;abort&nbsp;reason&nbsp;number.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MoveReverseStatus">class <strong>MoveReverseStatus</strong></a>(<a href="status.html#Status">Status</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Status">Status</a>&nbsp;class&nbsp;containing&nbsp;the&nbsp;results&nbsp;of&nbsp;a&nbsp;move&nbsp;reverse&nbsp;command.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="MoveReverseStatus-__init__"><strong>__init__</strong></a>(self, command, distance, abort_reason)</dt></dl>
+
+<dl><dt><a name="MoveReverseStatus-actualResultString"><strong>actualResultString</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="status.html#Status">Status</a>:<br>
+<dl><dt><a name="MoveReverseStatus-abortReasonString"><strong>abortReasonString</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;string&nbsp;represented&nbsp;by&nbsp;the&nbsp;abort&nbsp;reason&nbsp;number.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="PollSensorStatus">class <strong>PollSensorStatus</strong></a>(<a href="status.html#Status">Status</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Status">Status</a>&nbsp;class&nbsp;containing&nbsp;information&nbsp;about&nbsp;a&nbsp;single&nbsp;sensor.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="PollSensorStatus-__init__"><strong>__init__</strong></a>(self, command, sensor, value)</dt></dl>
+
+<hr>
+Methods inherited from <a href="status.html#Status">Status</a>:<br>
+<dl><dt><a name="PollSensorStatus-abortReasonString"><strong>abortReasonString</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;string&nbsp;represented&nbsp;by&nbsp;the&nbsp;abort&nbsp;reason&nbsp;number.</tt></dd></dl>
+
+<dl><dt><a name="PollSensorStatus-actualResultString"><strong>actualResultString</strong></a>(self)</dt><dd><tt>Unimplemented&nbsp;base&nbsp;class.&nbsp;Subclasses&nbsp;can&nbsp;override&nbsp;so&nbsp;that&nbsp;the&nbsp;method&nbsp;prints&nbsp;out&nbsp;a&nbsp;formatted<br>
+status&nbsp;string&nbsp;which&nbsp;can&nbsp;be&nbsp;displayed&nbsp;to&nbsp;the&nbsp;user.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RotateClockwiseStatus">class <strong>RotateClockwiseStatus</strong></a>(<a href="status.html#Status">Status</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Status">Status</a>&nbsp;class&nbsp;containing&nbsp;the&nbsp;results&nbsp;of&nbsp;a&nbsp;rotate&nbsp;clockwise&nbsp;command.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RotateClockwiseStatus-__init__"><strong>__init__</strong></a>(self, command, degrees, abort_reason)</dt></dl>
+
+<dl><dt><a name="RotateClockwiseStatus-actualResultString"><strong>actualResultString</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="status.html#Status">Status</a>:<br>
+<dl><dt><a name="RotateClockwiseStatus-abortReasonString"><strong>abortReasonString</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;string&nbsp;represented&nbsp;by&nbsp;the&nbsp;abort&nbsp;reason&nbsp;number.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="RotateCounterclockwiseStatus">class <strong>RotateCounterclockwiseStatus</strong></a>(<a href="status.html#Status">Status</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Status">Status</a>&nbsp;class&nbsp;containing&nbsp;the&nbsp;results&nbsp;of&nbsp;a&nbsp;rotate&nbsp;counterclockwise&nbsp;command.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="RotateCounterclockwiseStatus-__init__"><strong>__init__</strong></a>(self, command, degrees, abort_reason)</dt></dl>
+
+<dl><dt><a name="RotateCounterclockwiseStatus-actualResultString"><strong>actualResultString</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="status.html#Status">Status</a>:<br>
+<dl><dt><a name="RotateCounterclockwiseStatus-abortReasonString"><strong>abortReasonString</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;string&nbsp;represented&nbsp;by&nbsp;the&nbsp;abort&nbsp;reason&nbsp;number.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="ScanDataStatus">class <strong>ScanDataStatus</strong></a>(<a href="status.html#Status">Status</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Status">Status</a>&nbsp;class&nbsp;containing&nbsp;information&nbsp;about&nbsp;a&nbsp;single&nbsp;scanned&nbsp;object.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="ScanDataStatus-__init__"><strong>__init__</strong></a>(self, command, angle, distance, size)</dt></dl>
+
+<hr>
+Methods inherited from <a href="status.html#Status">Status</a>:<br>
+<dl><dt><a name="ScanDataStatus-abortReasonString"><strong>abortReasonString</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;string&nbsp;represented&nbsp;by&nbsp;the&nbsp;abort&nbsp;reason&nbsp;number.</tt></dd></dl>
+
+<dl><dt><a name="ScanDataStatus-actualResultString"><strong>actualResultString</strong></a>(self)</dt><dd><tt>Unimplemented&nbsp;base&nbsp;class.&nbsp;Subclasses&nbsp;can&nbsp;override&nbsp;so&nbsp;that&nbsp;the&nbsp;method&nbsp;prints&nbsp;out&nbsp;a&nbsp;formatted<br>
+status&nbsp;string&nbsp;which&nbsp;can&nbsp;be&nbsp;displayed&nbsp;to&nbsp;the&nbsp;user.</tt></dd></dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Status">class <strong>Status</strong></a></font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Base&nbsp;class&nbsp;for&nbsp;status&nbsp;objects.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="Status-__init__"><strong>__init__</strong></a>(self, command)</dt></dl>
+
+<dl><dt><a name="Status-abortReasonString"><strong>abortReasonString</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;string&nbsp;represented&nbsp;by&nbsp;the&nbsp;abort&nbsp;reason&nbsp;number.</tt></dd></dl>
+
+<dl><dt><a name="Status-actualResultString"><strong>actualResultString</strong></a>(self)</dt><dd><tt>Unimplemented&nbsp;base&nbsp;class.&nbsp;Subclasses&nbsp;can&nbsp;override&nbsp;so&nbsp;that&nbsp;the&nbsp;method&nbsp;prints&nbsp;out&nbsp;a&nbsp;formatted<br>
+status&nbsp;string&nbsp;which&nbsp;can&nbsp;be&nbsp;displayed&nbsp;to&nbsp;the&nbsp;user.</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-parseStatus"><strong>parseStatus</strong></a>(string, mysender)</dt><dd><tt>Parses&nbsp;the&nbsp;raw&nbsp;string&nbsp;from&nbsp;the&nbsp;receiver&nbsp;and&nbsp;creates&nbsp;a&nbsp;status&nbsp;object&nbsp;based&nbsp;on&nbsp;the&nbsp;type&nbsp;of&nbsp;status<br>
+after&nbsp;validating&nbsp;that&nbsp;the&nbsp;string&nbsp;is&nbsp;correct&nbsp;and&nbsp;the&nbsp;corresponding&nbsp;command&nbsp;exists.</tt></dd></dl>
+</td></tr></table>
+</body></html>
