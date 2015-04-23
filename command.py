@@ -17,11 +17,15 @@ class Command:
         self.command_id = Command.last_command_id + 1
         Command.last_command_id += 1
 
-    def toCommandString(self):
+    def toCommandString(self, *strings):
         """
         Return a command string that can be sent to the robot.
         """
-        return ""
+        command_string = "!"
+        for string in strings:
+            command_string += string + ','
+        command_string = command_string[:-1] + '$'
+        return command_string
 
 class MoveForwardCommand(Command):
     """
@@ -32,7 +36,7 @@ class MoveForwardCommand(Command):
         Command.__init__(self)
 
     def toCommandString(self):
-        return '!mvfwd,' + str(self.command_id) + ',' + str(self.distance) + '$'
+        return Command.toCommandString(self, 'mvfwd', str(self.command_id), str(self.distance))
 
 class MoveReverseCommand(Command):
     """
@@ -43,7 +47,7 @@ class MoveReverseCommand(Command):
         Command.__init__(self)
 
     def toCommandString(self):
-        return '!mvrev,' + str(self.command_id) + ',' + str(self.distance) + '$'
+        return Command.toCommandString(self, 'mvrev', str(self.command_id), str(self.distance))
 
 class RotateClockwiseCommand(Command):
     """
@@ -54,7 +58,7 @@ class RotateClockwiseCommand(Command):
         Command.__init__(self)
 
     def toCommandString(self):
-        return '!rtclk,' + str(self.command_id) + ',' + str(self.degrees) + '$'
+        return Command.toCommandString(self, 'rtclk', str(self.command_id), str(self.degrees))
 
 class RotateCounterclockwiseCommand(Command):
     """
@@ -65,7 +69,7 @@ class RotateCounterclockwiseCommand(Command):
         Command.__init__(self)
 
     def toCommandString(self):
-        return '!rtctc,' + str(self.command_id) + ',' + str(self.degrees) + '$'
+        return Command.toCommandString(self, 'rtctc', str(self.command_id), str(self.degrees))
 
 class BeginScanCommand(Command):
     """
@@ -76,7 +80,7 @@ class BeginScanCommand(Command):
         Command.__init__(self)
 
     def toCommandString(self):
-        return '!scan,' + str(self.command_id) + ',' + str(self.max_distance) + '$'
+        return Command.toCommandString(self, 'scan', str(self.command_id), str(self.max_distance))
 
 class PlayMusicCommand(Command):
     """
@@ -88,7 +92,7 @@ class PlayMusicCommand(Command):
         Command.__init__(self)
 
     def toCommandString(self):
-        return '!music,' + str(self.command_id) + str(self.song_no) + '$'
+        return Command.toCommandString(self, 'music', str(self.command_id), str(self.song_no))
 
 class PollSensorCommand(Command):
     """
@@ -98,4 +102,4 @@ class PollSensorCommand(Command):
         Command.__init__(self)
 
     def toCommandString(self):
-        return '!sense,' + str(self.command_id) + '$'
+        return Command.toCommandString(self, 'sense', str(self.command_id))
