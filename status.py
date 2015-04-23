@@ -1,6 +1,16 @@
+"""
+Status Module
+
+Contains classes for status objects, which represent statuses returned by the robot.
+"""
+
 import sender
 
 def parseStatus(string, mysender):
+    """
+    Parses the raw string from the receiver and creates a status object based on the type of status
+    after validating that the string is correct and the corresponding command exists.
+    """
     if string[0] != '!':
         return None
     if string.endswith('$'):
@@ -34,6 +44,9 @@ def parseStatus(string, mysender):
 
 
 class Status:
+    """
+    Base class for status objects.
+    """
 
     def __init__(self, command):
         self.command = command
@@ -59,13 +72,22 @@ class Status:
         self.strings[100] = "Weird abort reason"
 
     def abortReasonString(self):
+        """
+        Return the string represented by the abort reason number.
+        """
         return self.strings[self.abort_reason]
 
     def actualResultString(self):
+        """
+        Unimplemented base class. Subclasses can override so that the method prints out a formatted
+        status string which can be displayed to the user.
+        """
         return "Base Class. Not implemented."
 
 class MoveForwardStatus(Status):
-
+    """
+    Status class containing the results of a move forward command.
+    """
     def __init__(self, command, distance, abort_reason):
         self.distance_actually_moved = distance
         self.abort_reason = abort_reason
@@ -75,7 +97,9 @@ class MoveForwardStatus(Status):
         return "Actually moved {} mm".format(self.distance_actually_moved)
 
 class MoveReverseStatus(Status):
-
+    """
+    Status class containing the results of a move reverse command.
+    """
     def __init__(self, command, distance, abort_reason):
         self.distance_actually_moved = distance
         self.abort_reason = abort_reason
@@ -85,7 +109,9 @@ class MoveReverseStatus(Status):
         return "Actually moved {} mm".format(self.distance_actually_moved)
 
 class RotateClockwiseStatus(Status):
-
+    """
+    Status class containing the results of a rotate clockwise command.
+    """
     def __init__(self, command, degrees, abort_reason):
         self.degrees_actually_turned = degrees
         self.abort_reason = abort_reason
@@ -95,7 +121,9 @@ class RotateClockwiseStatus(Status):
         return "Actually turned {} degrees".format(self.degrees_actually_turned)
 
 class RotateCounterclockwiseStatus(Status):
-
+    """
+    Status class containing the results of a rotate counterclockwise command.
+    """
     def __init__(self, command, degrees, abort_reason):
         self.degrees_actually_turned = degrees
         self.abort_reason = abort_reason
@@ -106,7 +134,9 @@ class RotateCounterclockwiseStatus(Status):
 
 #Format: "!scan,cmd_id,angle,distance(cm),size(cm)$"
 class ScanDataStatus(Status):
-
+    """
+    Status class containing information about a single scanned object.
+    """
     def __init__(self, command, angle, distance, size):
         self.size = size
         self.angle = angle
